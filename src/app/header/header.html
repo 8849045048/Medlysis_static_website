@@ -14,7 +14,7 @@
         </div>
       </a>
 
-      <!-- 2. Desktop Nav Links -->
+      <!-- 2. Desktop Nav Links (Hidden on Mobile) -->
       <ul class="nav-links d-none d-lg-flex">
         <li>
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
@@ -33,7 +33,13 @@
         </li>
       </ul>
 
-      <!-- 3. Hamburger Menu Button -->
+      <!-- 3. ZERO COST BANNER (Desktop) -->
+      <!-- Clickable -> Goes to Contact Page -->
+      <div class="zero-cost-banner d-none d-lg-block" routerLink="/contact">
+        Pay <strong>$0</strong> for Medical Record Retrieval
+      </div>
+
+      <!-- 4. Hamburger Menu Button (Mobile) -->
       <button class="hamburger-btn d-lg-none" (click)="toggleMobileMenu()" aria-label="Toggle navigation">
         <div class="hamburger-icon" [class.open]="isMobileMenuOpen">
           <span></span>
@@ -46,24 +52,21 @@
   </div>
 </nav>
 
-<!-- 4. Mobile Menu Overlay -->
+<!-- 5. Mobile Menu Overlay -->
 <div class="mobile-menu-overlay" [class.open]="isMobileMenuOpen">
   <div class="mobile-menu-content">
     <ul class="mobile-links">
-      <li>
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a>
-      </li>
-      <li>
-        <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About Us</a>
-      </li>
-      <li>
-        <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
-      </li>
-      <li>
-        <a routerLink="/why-choose-us" routerLinkActive="active" (click)="closeMobileMenu()">Why Choose Us</a>
-      </li>
-      <li>
-        <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact Us</a>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About Us</a></li>
+      <li><a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a></li>
+      <li><a routerLink="/why-choose-us" routerLinkActive="active" (click)="closeMobileMenu()">Why Choose Us</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact Us</a></li>
+      
+      <!-- Mobile Banner -->
+      <li class="mt-4">
+        <div class="zero-cost-banner mobile-banner" routerLink="/contact" (click)="closeMobileMenu()">
+          Pay <strong>$0</strong> for MRR
+        </div>
       </li>
     </ul>
   </div>

@@ -1,137 +1,139 @@
-/* src/app/pages/about/about.css */
 :host {
   --brand-purple: #6f42c1;
+  --dark-heading: #1f2937;
+  --text-muted: #6b7280;
+  --bg-light: #f9fafb;
 }
 
 /* Section 1: Hero Styles */
 .page-hero {
-  background-color: #2c2c2c; /* Darker than body */
-  padding: 4rem 0;
-  border-bottom: 1px solid #333;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%); /* Subtle purple tint */
+  padding: 5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.text-dark-heading {
+  color: var(--dark-heading);
 }
 
 .text-purple {
   color: var(--brand-purple);
 }
 
-/* Section 2: Story Styles */
-p.text-white {
+.text-muted {
+  color: var(--text-muted) !important;
   line-height: 1.7;
-  color: #e0e0e0 !important;
+}
+
+/* Image Styling */
+.image-wrapper img {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 }
 
 /* Section 3: Mission Styles */
 .mission-section {
-  background-color: #2c2c2c;
+  background-color: #ffffff;
   padding: 5rem 0;
 }
 
 .section-icon {
   font-size: 3rem;
   color: var(--brand-purple);
+  display: block;
 }
 
 /* Section 4: Compliance Styles */
 .compliance-item {
-  background-color: #2c2c2c;
-  border: 1px solid #444;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   height: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.compliance-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(111, 66, 193, 0.15); /* Purple glow shadow */
+  border-color: var(--brand-purple);
 }
 
 .compliance-item i {
-  color: #28a745; /* Green checkmark */
+  color: #10b981; /* Green checkmark */
   font-size: 1.5rem;
   margin-right: 1rem;
 }
 
 .compliance-item span {
-  font-weight: 500;
-  color: #e0e0e0;
+  font-weight: 600;
+  color: var(--dark-heading);
 }
 
 /* Section 5: Global Footprint Styles */
 .footprint-section {
   padding: 5rem 0;
-  background-color: #2c2c2c; /* Dark grey section background */
-  border-top: 1px solid #333;
+  background-color: var(--bg-light); /* Light gray background */
+  border-top: 1px solid #e5e7eb;
 }
 
 .footprint-card {
-  background-color: #1a1a1a; /* Even darker card, matches body */
-  border: 1px solid #444;
-  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
   padding: 2.5rem;
   height: 100%;
   display: flex;
-  flex-direction: column; /* This aligns the address to the bottom */
+  flex-direction: column;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 .footprint-card:hover {
-  border-color: var(--brand-purple);
   transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-color: var(--brand-purple);
 }
 
 .footprint-icon {
   font-size: 2.5rem;
   color: var(--brand-purple);
+  margin-bottom: 1rem;
 }
 
-.footprint-card p.text-muted,
-.footprint-card address.text-muted {
-  color: #adb5bd !important;
-  font-size: 0.95rem;
-  line-height: 1.7;
+.footprint-card .border-top {
+  border-top: 1px solid #e5e7eb !important;
 }
- 
+
 address {
   font-style: normal;
 }
 
 /* Section 6: CTA Styles */
 .cta-section {
-  background-color: #1a1a1a;
-  padding: 5rem 0;
-  border-top: 1px solid #333;
-}
-
-.btn-purple {
   background-color: var(--brand-purple);
-  border-color: var(--brand-purple);
-  color: #fff;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  padding: 6rem 0;
+  color: white;
 }
 
-.btn-purple:hover {
-  background-color: #5a0eb5; /* Slightly darker purple */
-  border-color: #5a0eb5;
+/* Button overrides for CTA section */
+.btn-light {
+  background-color: #ffffff;
+  color: var(--brand-purple);
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-light:hover {
+  background-color: #f3f4f6;
   transform: translateY(-2px);
-}
-
-.btn-outline-light {
-  font-weight: 500;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .btn-outline-light:hover {
-  background-color: #fff;
-  color: #1a1a1a;
-  transform: translateY(-2px);
-}
-
-/* Responsive styles for CTA buttons */
-@media (max-width: 767px) {
-  .cta-section .btn {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .cta-section .btn.btn-outline-light {
-    margin-right: 0 !important;
-  }
+  background-color: #ffffff;
+  color: var(--brand-purple);
 }

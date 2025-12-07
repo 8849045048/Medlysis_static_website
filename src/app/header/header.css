@@ -4,7 +4,7 @@
   --text-muted: #6b7280;
   --glass-bg: rgba(255, 255, 255, 0.98); /* Solid white glass */
   --glass-border: rgba(0, 0, 0, 0.05);
-  --header-height: 80px;
+  --header-height: 90px;
 }
 
 /* 1. Navbar Container */
@@ -21,9 +21,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-.container {
-  height: 100%;
-}
+.container { height: 100%; }
 
 .navbar-content {
   display: flex;
@@ -32,53 +30,50 @@
   height: 100%;
 }
 
-/* --- NEW BRAND STYLES (Matches Screenshot) --- */
+/* Brand Styles */
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px; /* Space between logo and text */
+  gap: 12px;
   text-decoration: none;
   cursor: pointer;
 }
 
 .navbar-logo {
-  height: 45px; /* Adjust based on your actual logo file */
+  height: 45px;
   width: auto;
-  display: block;
 }
 
 .brand-info {
   display: flex;
   flex-direction: column;
-  line-height: 1.2; /* Tighter line height to keep text together */
+  line-height: 1.2;
 }
 
 .brand-title {
-  font-size: 1.35rem; /* Large and bold */
-  font-weight: 800; /* Extra bold */
-  color: #0f172a; /* Very dark navy/black */
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a; /* Dark Navy/Black */
   letter-spacing: -0.5px;
 }
 
 .brand-subtitle {
-  font-size: 0.8rem; /* Smaller text */
-  color: #64748b; /* Slate gray color */
+  font-size: 0.8rem;
+  color: #64748b; /* Slate Gray */
   font-weight: 500;
 }
-/* --- END BRAND STYLES --- */
 
-
-/* 2. Desktop Navigation Links */
+/* 2. Desktop Navigation */
 .nav-links {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .nav-link {
-  color: var(--text-dark); /* Dark Text */
+  color: var(--text-dark);
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
@@ -87,12 +82,11 @@
   transition: color 0.3s ease;
 }
 
-/* Underline Animation */
 .nav-link::after {
   content: '';
   position: absolute;
   width: 0;
-  height: 3px; /* Slightly thicker underline */
+  height: 3px;
   bottom: -2px;
   left: 0;
   background-color: var(--brand-purple);
@@ -100,34 +94,71 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover {
-  color: var(--brand-purple);
+.nav-link:hover { color: var(--brand-purple); }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: var(--brand-purple); }
+.nav-link.active::after { width: 100%; }
+
+/* 3. NEON 0$ BANNER BUTTON */
+.zero-cost-banner {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  
+  /* Animated Gradient */
+  background: linear-gradient(120deg, #ff4fa3, #d24fd8, #6f42c1, #0b63ff);
+  background-size: 350% 350%;
+  animation: smoothBG 10s ease infinite;
+  
+  padding: 10px 24px;
+  border-radius: 14px;
+  margin: 0 0 0 20px; 
+  
+  /* Neon Glow */
+  box-shadow: 0 0 12px rgba(255, 79, 163, 0.65);
+  
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.zero-cost-banner:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 18px rgba(255, 79, 163, 0.85);
 }
 
-.nav-link.active {
-  color: var(--brand-purple);
+.zero-cost-banner strong {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.75);
 }
 
-.nav-link.active::after {
-  width: 100%;
+@keyframes smoothBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* 3. Hamburger Icon */
+.mobile-banner {
+  margin: 0 auto;
+  font-size: 1.1rem;
+  padding: 12px 30px;
+}
+
+/* 4. HAMBURGER ICON */
 .hamburger-btn {
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 10px;
   z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger-icon {
-  width: 24px;
-  height: 18px;
+  width: 30px;
+  height: 22px;
   position: relative;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
@@ -136,9 +167,9 @@
 .hamburger-icon span {
   display: block;
   position: absolute;
-  height: 2px;
+  height: 3px;
   width: 100%;
-  background: var(--text-dark);
+  background-color: #333333; /* Dark lines */
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -147,28 +178,14 @@
 }
 
 .hamburger-icon span:nth-child(1) { top: 0px; }
-.hamburger-icon span:nth-child(2) { top: 8px; }
-.hamburger-icon span:nth-child(3) { top: 16px; }
+.hamburger-icon span:nth-child(2) { top: 9px; }
+.hamburger-icon span:nth-child(3) { top: 18px; }
 
-/* Hamburger Animation */
-.hamburger-icon.open span:nth-child(1) {
-  top: 8px;
-  transform: rotate(135deg);
-  background: var(--brand-purple);
-}
+.hamburger-icon.open span:nth-child(1) { top: 9px; transform: rotate(135deg); background-color: var(--brand-purple); }
+.hamburger-icon.open span:nth-child(2) { opacity: 0; left: -60px; }
+.hamburger-icon.open span:nth-child(3) { top: 9px; transform: rotate(-135deg); background-color: var(--brand-purple); }
 
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-  left: -60px;
-}
-
-.hamburger-icon.open span:nth-child(3) {
-  top: 8px;
-  transform: rotate(-135deg);
-  background: var(--brand-purple);
-}
-
-/* 4. Mobile Menu Overlay */
+/* 5. Mobile Menu Overlay */
 .mobile-menu-overlay {
   position: fixed;
   top: var(--header-height);
@@ -210,16 +227,14 @@
   transition: all 0.3s ease;
 }
 
-.mobile-menu-overlay.open .mobile-links li {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Staggered Delay for Menu Items */
+.mobile-menu-overlay.open .mobile-links li { opacity: 1; transform: translateY(0); }
+/* Staggered Delay */
 .mobile-menu-overlay.open .mobile-links li:nth-child(1) { transition-delay: 0.1s; }
 .mobile-menu-overlay.open .mobile-links li:nth-child(2) { transition-delay: 0.15s; }
 .mobile-menu-overlay.open .mobile-links li:nth-child(3) { transition-delay: 0.2s; }
 .mobile-menu-overlay.open .mobile-links li:nth-child(4) { transition-delay: 0.25s; }
 .mobile-menu-overlay.open .mobile-links li:nth-child(5) { transition-delay: 0.3s; }
+.mobile-menu-overlay.open .mobile-links li:nth-child(6) { transition-delay: 0.35s; }
 
 .mobile-links a {
   display: block;
@@ -238,6 +253,7 @@
 /* Responsive Logic */
 @media (max-width: 991px) {
   .nav-links { display: none !important; } 
+  .hamburger-btn { display: flex; } 
 }
 
 @media (min-width: 992px) {

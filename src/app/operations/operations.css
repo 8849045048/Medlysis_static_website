@@ -1,0 +1,112 @@
+:host {
+  --brand-purple: #6f42c1;
+  --bg: #ffffff;
+  --card-border: #eef2f6;
+  --text-dark: #0b1724;
+  --muted: #6b7280;
+}
+
+/* ================================
+   SECTION
+================================ */
+.operations-section {
+  background: var(--bg);
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* ================================
+   CARD BASE
+================================ */
+.operation-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: 
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+  box-shadow: 
+    0 10px 30px rgba(11, 99, 255, 0.06);
+}
+
+/* ================================
+   HOVER EFFECT (Purple outline + glow)
+================================ */
+.operation-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-purple);
+  box-shadow:
+    0 0 0 3px rgba(111, 66, 193, 0.35),   /* Purple outline */
+    0 20px 50px rgba(11, 99, 255, 0.09);  /* Soft glow */
+}
+
+/* ================================
+   IMAGE WRAPPER
+================================ */
+.operation-media {
+  width: 100%;
+  display: block;
+  background: #f8fafc;
+}
+
+/* Main Image */
+.operation-img {
+  width: 100%;
+  height: 300px; /* Increased height */
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* ================================
+   CARD CONTENT
+================================ */
+.operation-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+.operation-body .text-dark {
+  color: var(--text-dark);
+}
+
+.operation-body .text-muted {
+  color: var(--muted);
+}
+
+/* ================================
+   RESPONSIVE 
+================================ */
+@media (max-width: 767px) {
+  .operation-img {
+    height: 230px; /* Mobile height */
+  }
+  .operation-body {
+    padding: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .operation-img {
+    height: 200px; /* Small devices */
+  }
+  .operation-body {
+    text-align: center;
+  }
+}
+
+/* ================================
+   UTILITIES
+================================ */
+.text-purple {
+  color: var(--brand-purple);
+}

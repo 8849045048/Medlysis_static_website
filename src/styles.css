@@ -1,0 +1,124 @@
+/* ================================
+   Global White Theme
+================================ */
+
+/* Base page styling */
+body {
+  background-color: #ffffff;     /* White background */
+  color: #1f2937;                /* Dark gray text (#1f2937 like Tailwind slate-800) */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Bootstrap container width override */
+.container {
+  max-width: 1140px;
+}
+
+/* Brand Purple Utility */
+.text-purple {
+  color: #6f42c1 !important;
+}
+
+/* =====================================
+   BUTTONS — WHITE THEME
+===================================== */
+
+/* Purple primary button */
+.btn-primary {
+  background-color: #6f42c1 !important;
+  border-color: #6f42c1 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.btn-primary:hover {
+  background-color: #5a34a3 !important;
+  border-color: #5a34a3 !important;
+}
+
+/* Outline button (dark text outline) */
+.btn-outline-secondary {
+  color: #1f2937 !important;
+  border-color: #d1d5db !important; /* Light gray outline */
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f3f4f6 !important; /* Light gray */
+  color: #1f2937 !important;
+  border-color: #c4c4c4 !important;
+}
+
+/* =====================================
+   GLOBAL LINKS
+===================================== */
+
+a {
+  color: #6f42c1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4b2c91;
+  text-decoration: underline;
+}
+
+/* =====================================
+   CUSTOM SCROLLBAR — WHITE THEME
+===================================== */
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* Light gray */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b3b3b3; /* Medium gray */
+  border-radius: 6px;
+  border: 2px solid #f1f1f1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6f42c1; /* BRAND PURPLE */
+}
+
+/* =====================================
+   TEXT COLORS FOR WHITE THEME
+===================================== */
+.text-muted {
+  color: #6b7280 !important; /* Professional gray */
+}
+
+.text-dark {
+  color: #1f2937 !important;
+}
+
+/* =====================================
+   GENERAL UTILITIES
+===================================== */
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.bg-light-gray {
+  background-color: #f8fafc !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}

@@ -1,0 +1,90 @@
+<!-- src/app/pages/why-choose-us/why-choose-us.html -->
+
+<!-- Section 1: Page Hero -->
+<div class="page-hero">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold text-purple-gradient">Why Partner with Medlysis?</h1>
+    <p class="lead text-white col-lg-8 mx-auto">
+      Discover the Medlysis difference: a unique blend of UK governance, Indian
+      operational excellence, and an unwavering commitment to client success in
+      the U.S. healthcare sector.
+    </p>
+  </div>
+</div>
+
+<!-- Section 2: 6-Point Feature Grid -->
+<div class="container my-5 py-5">
+  <div class="row g-4">
+    <!-- 
+      This loop now has 'let i = index'
+      We use this to create a staggered delay (0ms, 100ms, 200ms) for each row.
+    -->
+    <div class="col-lg-4 col-md-6" *ngFor="let feature of features; let i = index" 
+         data-aos="fade-up" 
+         [attr.data-aos-delay]="(i % 3) * 100">
+      <div class="feature-card">
+        <i class="bi {{ feature.icon }} feature-icon"></i>
+        <h5 class="fw-bold mt-3 text-white">{{ feature.title }}</h5>
+        <p class="text-white">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: Our Unique Operational Model -->
+<div class="operational-model-section">
+  <div class="container">
+    <div class="row text-center">
+      <!-- Added animation -->
+      <div class="col-lg-8 mx-auto" data-aos="fade-up">
+        <h2 class="display-5 fw-bold text-white">Our Unique Operational Model</h2>
+        <p class="lead text-white mt-3 mb-5">
+          Combining strategic oversight with off-shore benefits for optimal results.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-center">
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/Globe.png" 
+             class="img-fluid rounded-3" 
+             alt="Globe">
+      </div>
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <h3 class="fw-bold text-purple">Strength in Synergy</h3>
+        <p class="text-white">
+          Our model provides the strategic advantages of a UK-based entity for
+          compliance, insurance, and client relationship management. This ensures
+          peace of mind and the highest international standards.
+        
+        <p class="text-white">
+          This is seamlessly blended with our highly skilled and cost-effective
+          operational teams in India. They provide the 24/7 engine for
+          delivering, processing, and support, allowing us to be highly responsive
+          and scalable.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: Final CTA -->
+<!-- Added animation -->
+<div class="cta-section" data-aos="fade-up">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-5 fw-bold text-white">Experience the Medlysis Advantage</h2>
+        <p class="lead text-white mt-3 mb-4">
+          Let us show you how our unique approach can transform your healthcare support
+          operations.
+        </p>
+        <a routerLink="/contact" class="btn btn-purple btn-lg px-5 py-3">
+          Schedule a Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

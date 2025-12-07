@@ -1,0 +1,158 @@
+<!-- src/app/pages/about/about.html -->
+
+<!-- Section 1: Page Hero -->
+<div class="page-hero">
+  <!-- The hero loads instantly, so no animation needed here -->
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">About <span class="text-purple">Medlysis</span></h1>
+    <p class="lead text-white col-lg-8 mx-auto">
+      We are a London-registered healthcare solutions provider with dedicated
+      operations in India, delivering fast, secure, and timely
+      support to U.S. healthcare organizations.
+    </p>
+  </div>
+</div>
+
+<!-- Section 2: Our Story (Text + Image) -->
+<div class="container my-5 py-5">
+  <div class="row g-5 align-items-center">
+    <!-- Add animations to both columns -->
+    <div class="col-lg-6" data-aos="fade-right">
+      <h2 class="fw-bold mb-4">Our Story</h2>
+      <p class="text-white mb-3">
+        Medlysis started with a clear vision: to bridge the gap between the
+        complex demands of U.S. healthcare and the need for efficient, scalable support.
+        We saw the challenges healthcare providers, legal firms, and
+        insurance companies faced in accessing timely and compliant information, so we
+        created a purpose-built solution.
+      </p>
+      <p class="text-white">
+        Our UK entity provides a robust, London-based legal and adherence to stringent
+        regulatory frameworks, while our skilled operations team in India ensures high-
+        quality, 24/7 service. This "Global Footprint" gives our clients
+        the best of both worlds: robust governance and operational agility.
+      </p>
+    </div>
+    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+      <img src="assets/Meeting.png" 
+           class="img-fluid rounded-3" 
+           alt="Meeting">
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: Our Mission (Centered) -->
+<div class="mission-section text-center" data-aos="fade-up">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <i class="bi bi-bullseye section-icon"></i>
+        <h2 class="fw-bold display-5 mt-3">Our Mission</h2>
+        <p class="lead text-white mt-3">
+          To deliver accurate, secure, and timely support services to U.S. healthcare
+          partners, helping them reduce administrative burdens, ensure
+          compliance, and achieve their strategic goals through reliable partnership
+          and innovative solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: Commitment to Compliance -->
+<div class="container my-5 py-5">
+  <div class="row text-center" data-aos="fade-up">
+    <div class="col-12">
+      <i class="bi bi-shield-check section-icon"></i>
+      <h2 class="fw-bold display-5 mt-3">Commitment to Compliance</h2>
+      <p class="lead text-white col-lg-8 mx-auto mt-3">
+        Security is our foundation. We are ICO registered and adhere to the
+        highest standards to protect sensitive healthcare information.
+      </p>
+    </div>
+  </div>
+
+  <!-- This is the 6-item list -->
+  <div class="row g-4 mt-5">
+    <!-- Add staggered animations to each card -->
+    <div class="col-md-4" *ngFor="let item of complianceItems; let i = index" [attr.data-aos-delay]="i * 100" data-aos="fade-up">
+      <div class="compliance-item">
+        <i class="bi bi-check-circle-fill"></i>
+        <span>{{ item }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+  Section 5: Global Footprint (Pasted directly into the file)
+  (This was the fix from our last conversation)
+-->
+<div class="footprint-section" data-aos="fade-up">
+  <div class="container">
+    <!-- SECTION TITLE -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="display-5 fw-bold mb-3">Our Global <span class="text-purple">Footprint</span></h2>
+        <p class="lead text-white mb-5">
+          Strategically positioned to serve U.S. clients with global expertise.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2-COLUMN CARDS -->
+    <div class="row g-4">
+      
+      <!-- Card 1: UK -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="footprint-card">
+          <i class="bi bi-building footprint-icon"></i>
+          <h5 class="fw-bold text-white mt-3">United Kingdom (HQ)</h5>
+          <p class="text-white">
+            Medlysis Ltd. is registered in London, providing robust legal and
+            regulatory oversight. Our UK presence ensures client confidence and
+            adherence to international data protection standards.
+          </p>
+          <address class="text-white mt-auto pt-3">
+            90 Harrow View, HA1 4TE, England
+          </address>
+        </div>
+      </div>
+
+      <!-- Card 2: India -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="footprint-card">
+          <i class="bi bi-globe-americas footprint-icon"></i>
+          <h5 class="fw-bold text-white mt-3">India (Operations)</h5>
+          <p class="text-white">
+            Our state-of-the-art operations centers in India are staffed by skilled
+            professionals dedicated to providing efficient and high-quality
+            backend support for all our services.
+          </p>
+          <p class="text-whitw mt-auto pt-3">
+            Key operational hubs across major Indian cities.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- --- END OF GLOBAL FOOTPRINT --- -->
+
+
+<!-- Section 6: FINAL Call to Action -->
+<div class="cta-section" data-aos="fade-up">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-5 fw-bold text-white">Partner with Medlysis for Reliable Healthcare Solutions</h2>
+        <p class="lead text-white mt-3 mb-4">
+          Learn more about how our expertise and global model can benefit your organization.
+        
+        <a routerLink="/contact" class="btn btn-purple btn-lg px-4 me-md-2">Contact Us</a>
+        <a routerLink="/services" class="btn btn-outline-light btn-lg px-4">Explore Our Services</a>
+      </div>
+    </div>
+  </div>
+</div>

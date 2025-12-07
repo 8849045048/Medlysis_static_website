@@ -1,0 +1,74 @@
+:host {
+  --brand-purple: #6f42c1;
+  --brand-pink: #ff4fa3;
+  --brand-magenta: #d24fd8;
+  --bg-white: #ffffff;
+  --card-border: #e6e8f0;
+  --text-dark: #0b1724;
+  --text-muted: #6b7280;
+}
+
+/* Gradient Heading */
+.text-purple-gradient {
+  background: linear-gradient(90deg, #ff4fa3, #d24fd8, #6f42c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Testimonial Card (White Modern Style) */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 2.2rem;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(11, 99, 255, 0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Hover effect - Lift + glow */
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 0 0 3px rgba(212, 79, 216, 0.25),
+    0 20px 45px rgba(111, 66, 193, 0.15);
+}
+
+/* Fancy decorative quote symbol */
+.quote-mark {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(111, 66, 193, 0.18);
+  line-height: 1;
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  pointer-events: none;
+}
+
+/* Testimonial text */
+.testimonial-text {
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Client name */
+.author {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.8rem;
+  }
+  .quote-mark {
+    font-size: 3rem;
+  }
+}

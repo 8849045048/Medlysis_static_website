@@ -1,0 +1,149 @@
+<!-- src/app/pages/services-page/services-page.html -->
+
+<!-- Section 1: Medical Record Retrieval (MRR) -->
+<div class="service-section">
+  <div class="container">
+    <div class="row">
+      <!-- Added animation -->
+      <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+        <h1 class="display-5 fw-bold text-purple-gradient">Efficient Medical Record Retrieval Services You Can Rely On</h1>
+        <p class="lead text-white mt-3">
+          Fast, secure, and accurate access to medical records – supporting law firms, healthcare
+          providers, and insurance companies across the U.S.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-5 g-5">
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h5 class="fw-bold text-white mb-3">Our MRR Service includes:</h5>
+        <ul class="list-unstyled feature-list">
+          <li *ngFor="let item of mrrIncludes">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="why-box">
+          <h5 class="fw-bold text-white mb-3">Why Clients Choose Medlysis:</h5>
+          <ul class="list-unstyled feature-list">
+            <li *ngFor="let item of mrrWhy">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Added animation -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a routerLink="/contact" class="btn-purple-link">
+        Want to experience smooth record retrieval? <span class="fw-bold">Let's Get in Touch <i class="bi bi-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Section 2: Release of Information (ROI) -->
+<div class="service-section">
+  <div class="container">
+    <div class="row">
+      <!-- Added animation -->
+      <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+        <h1 class="display-5 fw-bold text-purple-gradient">Compliant Release of Information Services Tailored to U.S. Providers</h1>
+        <p class="lead text-white mt-3">
+          Outsource your ROI with Medlysis to ensure all requests for patient records are processed
+          securely, efficiently, and 100% HIPAA-compliant.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-5 g-5">
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h5 class="fw-bold text-white mb-3">Our ROI Service includes:</h5>
+        <ul class="list-unstyled feature-list">
+          <li *ngFor="let item of roiIncludes">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="why-box">
+          <h5 class="fw-bold text-white mb-3">What makes Medlysis different?</h5>
+          <ul class="list-unstyled feature-list">
+            <li *ngFor="let item of roiWhy">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Added animation -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a routerLink="/contact" class="btn-purple-link">
+        Reduce ROI workload, improve turnaround. <span class="fw-bold">Contact us Now <i class="bi bi-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Section 3: Healthcare Staffing -->
+<div class="service-section">
+  <div class="container">
+    <div class="row">
+      <!-- Added animation -->
+      <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+        <h1 class="display-5 fw-bold text-purple-gradient">Remote Healthcare Staffing That Scales With Your Needs</h1>
+        <p class="lead text-white mt-3">
+          Access skilled, cost-effective healthcare professionals for administrative and clinical
+          support roles – without the overhead.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-5 g-5">
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h5 class="fw-bold text-white mb-3">Our STAFFING service includes:</h5>
+        <ul class="list-unstyled feature-list">
+          <li *ngFor="let item of staffingIncludes">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>{{ item }}</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Added animation -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="why-box">
+          <h5 class="fw-bold text-white mb-3">Why partner with Medlysis:</h5>
+          <ul class="list-unstyled feature-list">
+            <li *ngFor="let item of staffingWhy">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Added animation -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a routerLink="/contact" class="btn-purple-link">
+        Start building your offshore team today. <span class="fw-bold">Schedule a Free Consultation <i class="bi bi-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: Final CTA (Reusing your component) -->
+<app-cta-section data-aos="fade-up"></app-cta-section>

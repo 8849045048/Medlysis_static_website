@@ -1,7 +1,10 @@
+<!-- Section 1: Page Hero -->
 <div class="page-hero">
   <div class="container text-center">
-    <h1 class="display-4 fw-bold text-purple">Contact Us</h1>
-    <p class="lead text-white">We're here to help. Reach out to us for inquiries, consultations, or to learn more about our healthcare solutions.</p>
+    <h1 class="display-4 fw-bold text-dark-heading">Contact <span class="text-purple">Medlysis</span></h1>
+    <p class="lead text-muted col-lg-8 mx-auto">
+      We're here to help. Reach out to us for inquiries, consultations, or to learn more about our healthcare solutions.
+    </p>
   </div>
 </div>
 
@@ -10,7 +13,7 @@
     
     <!-- Column 1: Contact Info -->
     <div class="col-lg-5" data-aos="fade-right">
-      <h3 class="fw-bold mb-4">Contact Information</h3>
+      <h3 class="fw-bold mb-4 text-dark-heading">Contact Information</h3>
       <ul class="list-unstyled contact-info">
         <li>
           <i class="bi bi-envelope-fill"></i>
@@ -33,24 +36,28 @@
 
     <!-- Column 2: Contact Form -->
     <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
-      <h3 class="fw-bold mb-4">Send Us a Message</h3>
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-        <div class="mb-3">
-          <label for="name" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="name" formControlName="name">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" formControlName="email">
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="5" formControlName="message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg px-5" [disabled]="!contactForm.valid">
-          Submit
-        </button>
-      </form>
+      <div class="form-wrapper">
+        <h3 class="fw-bold mb-4 text-dark-heading">Send Us a Message</h3>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="John Doe">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" formControlName="message" placeholder="How can we help you?"></textarea>
+          </div>
+          
+          <!-- GLOWING BUTTON -->
+          <button type="submit" class="btn btn-primary btn-lg px-5 w-100" [disabled]="!contactForm.valid">
+            Submit Message
+          </button>
+        </form>
+      </div>
     </div>
 
   </div>
@@ -61,8 +68,8 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2 class="display-5 fw-bold text-purple-gradient">Our Location</h2>
-        <p class="lead text-white mt-3 mb-5">
+        <h2 class="display-5 fw-bold mb-3 text-dark-heading">Our <span class="text-purple">Location</span></h2>
+        <p class="lead text-muted mt-3 mb-5">
           Our UK virtual office is centrally located in London.
         </p>
       </div>

@@ -1,76 +1,102 @@
-/* src/app/pages/why-choose-us/why-choose-us.css */
 :host {
   --brand-purple: #6f42c1;
+  --dark-heading: #1f2937;
+  --text-muted: #6b7280;
+  --bg-light: #f9fafb;
 }
 
 /* Section 1: Hero Styles */
 .page-hero {
-  background-color: #2c2c2c;
-  padding: 4rem 0;
-  border-bottom: 1px solid #333;
-}
-
-.text-purple-gradient {
-  /* This creates the purple/magenta gradient */
-  background: linear-gradient(to right, #6f42c1, #a052e0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Section 2: Feature Grid Styles */
-.feature-card {
-  background-color: #2c2c2c;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid #444;
-  height: 100%;
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  border-color: var(--brand-purple);
-  transform: translateY(-5px);
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  color: var(--brand-purple);
-}
-
-.feature-card p {
-  color: #adb5bd; /* This was 'text-white' in your HTML, let's use the standard muted color */
-  font-size: 0.9rem;
-}
-
-/* Section 3: Operational Model Styles */
-.operational-model-section {
-  background-color: #1a1a1a; /* Body background color */
+  /* Light gradient background */
+  background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%);
   padding: 5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.text-dark-heading {
+  color: var(--dark-heading);
 }
 
 .text-purple {
   color: var(--brand-purple);
 }
 
+.text-muted {
+  color: var(--text-muted) !important;
+  line-height: 1.7;
+}
+
+/* Section 2: Feature Grid Styles */
+.feature-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.feature-card:hover {
+  border-color: var(--brand-purple);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(111, 66, 193, 0.1); /* Purple shadow glow */
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--brand-purple);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  background-color: #f3f0ff; /* Light purple circle bg */
+  padding: 15px;
+  border-radius: 12px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Section 3: Operational Model Styles */
+.operational-model-section {
+  background-color: var(--bg-light); /* Light Gray Background */
+  padding: 6rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.image-wrapper img {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
 /* Section 4: CTA Styles */
 .cta-section {
-  background-color: #2c2c2c;
-  padding: 5rem 0;
-}
-
-.btn-purple {
   background-color: var(--brand-purple);
-  border-color: var(--brand-purple);
-  color: #fff;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.8rem 1.75rem !important; /* Make button bigger */
+  padding: 6rem 0;
+  color: white;
 }
 
-.btn-purple:hover {
-  background-color: #5a0eb5; /* Slightly darker purple */
-  border-color: #5a0eb5;
+/* White Button for CTA */
+.btn-light {
+  background-color: #ffffff;
+  color: var(--brand-purple);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f3f4f6;
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }

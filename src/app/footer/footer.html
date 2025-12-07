@@ -2,11 +2,13 @@
   <div class="container">
     <div class="row pt-5 pb-4">
       
+      <!-- Column 1: Logo & Description -->
       <div class="col-lg-5 col-md-12 mb-4">
         <a routerLink="/">
+          <!-- Make sure you have a logo that works on a light background -->
           <img src="assets/logo.png" alt="Medlysis Logo" class="footer-logo">
         </a>
-        <p class="footer-description">
+        <p class="footer-description mt-3">
           Precision in Process. Power in Partnership. Reliable,
           HIPAA-compliant record retrieval and staffing support
           at scale.
@@ -14,22 +16,22 @@
         <div class="social-icons">
           <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         </div>
       </div>
 
+      <!-- Column 2: Quick Links -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/services">Services</a></li>
+          <li><a routerLink="/why-choose-us">Why Choose Us</a></li>
+          <li><a routerLink="/contact">Contact Us</a></li>
+        </ul>
+      </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
-  <h5 class="footer-heading">Quick Links</h5>
-  <ul class="list-unstyled footer-links">
-    <li><a routerLink="/about">About Us</a></li>
-    <li><a routerLink="/services">Services</a></li>
-    <li><a routerLink="/why-choose-us">Why Choose Us</a></li>
-    <li><a routerLink="/contact">Contact Us</a></li>
-  </ul>
-</div>
-
-<!-- ... (Column 3: Contact Info) ... -->
-
+      <!-- Column 3: Contact Info -->
       <div class="col-lg-4 col-md-6 mb-4">
         <h5 class="footer-heading">Contact Info</h5>
         <ul class="list-unstyled contact-info">
@@ -54,11 +56,12 @@
 
     </div>
 
+    <!-- Bottom Section -->
     <hr class="footer-divider">
     <div class="row footer-bottom align-items-center">
       <div class="col-md-6">
         <p class="copyright-text">
-          &copy; 2025 Medlysis Inc. All rights reserved. Registered in England and Wales.
+          &copy; 2025 Medlysis Inc. All rights reserved.
         </p>
       </div>
       <div class="col-md-6 text-md-end">

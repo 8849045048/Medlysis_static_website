@@ -121,3 +121,22 @@
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@media (max-width: 768px) {
+  .zero-cost-banner {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 18px 20px;
+    font-size: 1.05rem;
+    text-align: center;
+
+    margin: 24px auto 32px;
+    border-radius: 14px;
+  }
+
+  /* Mobile tap feedback */
+  .zero-cost-banner:active {
+    transform: scale(0.97);
+  }
+}

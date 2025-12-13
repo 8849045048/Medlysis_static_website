@@ -1,73 +1,103 @@
 <nav class="navbar-glass">
   <div class="container">
     <div class="navbar-content">
-      
-      <!-- 1. Logo & Brand Text -->
+
+      <!-- LEFT: Logo & Brand -->
       <a class="navbar-brand" routerLink="/" (click)="closeMobileMenu()">
-        <!-- Logo Image -->
         <img src="assets/logo.png" alt="Medlysis Logo" class="navbar-logo">
-        
-        <!-- Brand Text Group -->
+
         <div class="brand-info">
           <span class="brand-title">Medlysis</span>
           <span class="brand-subtitle">Records Retrieval & Support</span>
         </div>
       </a>
 
-      <!-- 2. Desktop Nav Links (Hidden on Mobile) -->
-      <ul class="nav-links d-none d-lg-flex">
-        <li>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
-        </li>
-        <li>
-          <a routerLink="/about" routerLinkActive="active" class="nav-link">About Us</a>
-        </li>
-        <li>
-          <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
-        </li>
-        <li>
-          <a routerLink="/why-choose-us" routerLinkActive="active" class="nav-link">Why Choose Us</a>
-        </li>
-        <li>
-          <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact Us</a>
-        </li>
-      </ul>
+      <!-- RIGHT GROUP -->
+      <div class="nav-right">
 
-      <!-- 3. ZERO COST BANNER (Desktop) -->
-      <!-- Clickable -> Goes to Contact Page -->
-      <div class="zero-cost-banner d-none d-lg-block" routerLink="/contact">
-        Pay <strong>$0</strong> for Medical Record Retrieval
+        <!-- Desktop Nav Links -->
+        <ul class="nav-links d-none d-lg-flex">
+          <li>
+            <a routerLink="/" routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }"
+               class="nav-link">Home</a>
+          </li>
+          <li>
+            <a routerLink="/about" routerLinkActive="active"
+               class="nav-link">About Us</a>
+          </li>
+          <li>
+            <a routerLink="/services" routerLinkActive="active"
+               class="nav-link">Services</a>
+          </li>
+          <li>
+            <a routerLink="/why-choose-us" routerLinkActive="active"
+               class="nav-link">Why Choose Us</a>
+          </li>
+          <li>
+            <a routerLink="/contact" routerLinkActive="active"
+               class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+
+
+
+        <!-- Mobile Hamburger -->
+        <button class="hamburger-btn d-lg-none"
+                (click)="toggleMobileMenu()"
+                aria-label="Toggle navigation">
+          <div class="hamburger-icon" [class.open]="isMobileMenuOpen">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
       </div>
-
-      <!-- 4. Hamburger Menu Button (Mobile) -->
-      <button class="hamburger-btn d-lg-none" (click)="toggleMobileMenu()" aria-label="Toggle navigation">
-        <div class="hamburger-icon" [class.open]="isMobileMenuOpen">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-
     </div>
   </div>
 </nav>
 
-<!-- 5. Mobile Menu Overlay -->
+<!-- MOBILE MENU OVERLAY -->
 <div class="mobile-menu-overlay" [class.open]="isMobileMenuOpen">
   <div class="mobile-menu-content">
     <ul class="mobile-links">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About Us</a></li>
-      <li><a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a></li>
-      <li><a routerLink="/why-choose-us" routerLinkActive="active" (click)="closeMobileMenu()">Why Choose Us</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact Us</a></li>
-      
-      <!-- Mobile Banner -->
+
+      <li>
+        <a routerLink="/" routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+           (click)="closeMobileMenu()">Home</a>
+      </li>
+
+      <li>
+        <a routerLink="/about" routerLinkActive="active"
+           (click)="closeMobileMenu()">About Us</a>
+      </li>
+
+      <li>
+        <a routerLink="/services" routerLinkActive="active"
+           (click)="closeMobileMenu()">Services</a>
+      </li>
+
+      <li>
+        <a routerLink="/why-choose-us" routerLinkActive="active"
+           (click)="closeMobileMenu()">Why Choose Us</a>
+      </li>
+
+      <li>
+        <a routerLink="/contact" routerLinkActive="active"
+           (click)="closeMobileMenu()">Contact Us</a>
+      </li>
+
+      <!-- Mobile CTA -->
       <li class="mt-4">
-        <div class="zero-cost-banner mobile-banner" routerLink="/contact" (click)="closeMobileMenu()">
-          Pay <strong>$0</strong> for MRR
+        <div class="zero-cost-banner mobile-banner"
+             routerLink="/contact"
+             (click)="closeMobileMenu()">
+          Pay <strong>$0</strong> for Medical Record Retrieval
         </div>
       </li>
+
     </ul>
   </div>
 </div>

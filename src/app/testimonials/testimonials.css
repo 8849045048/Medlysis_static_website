@@ -1,74 +1,123 @@
 :host {
   --brand-purple: #6f42c1;
-  --brand-pink: #ff4fa3;
-  --brand-magenta: #d24fd8;
-  --bg-white: #ffffff;
-  --card-border: #e6e8f0;
-  --text-dark: #0b1724;
+  --text-dark: #1f2937;
   --text-muted: #6b7280;
+  --bg-light: #f9fafb;
 }
 
-/* Gradient Heading */
+/* Section Header Styles */
+.text-dark-heading {
+  color: var(--text-dark);
+}
+
 .text-purple-gradient {
-  background: linear-gradient(90deg, #ff4fa3, #d24fd8, #6f42c1);
+  background: linear-gradient(135deg, #6f42c1 0%, #a052e0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Testimonial Card (White Modern Style) */
+/* --- THE MODERN TESTIMONIAL CARD --- */
 .testimonial-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-  padding: 2.2rem;
+  height: 100%;
   position: relative;
+  border-radius: 20px;
+  background: #ffffff;
+  /* Soft double shadow for depth */
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+  border: 1px solid #f0f0f0;
   overflow: hidden;
-
-  box-shadow: 0 10px 30px rgba(11, 99, 255, 0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* Hover effect - Lift + glow */
-.testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 0 0 3px rgba(212, 79, 216, 0.25),
-    0 20px 45px rgba(111, 66, 193, 0.15);
-}
-
-/* Fancy decorative quote symbol */
-.quote-mark {
-  font-size: 4rem;
-  font-weight: 900;
-  color: rgba(111, 66, 193, 0.18);
-  line-height: 1;
+/* The Magic Gradient Border Effect (Bottom Line) */
+.testimonial-card::after {
+  content: '';
   position: absolute;
-  top: 10px;
-  left: 18px;
-  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #6f42c1, #ff4fa3);
+  transform: scaleX(0); /* Hidden initially */
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
-/* Testimonial text */
-.testimonial-text {
-  margin-top: 1.2rem;
+/* Hover State */
+.testimonial-card:hover {
+  transform: translateY(-10px); /* Lifts up */
+  box-shadow: 
+    0 20px 40px -5px rgba(111, 66, 193, 0.15), /* Purple glow */
+    0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card:hover::after {
+  transform: scaleX(1); /* Line grows across bottom */
+}
+
+.card-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Quote Icon */
+.quote-icon {
+  font-size: 2rem;
+  color: rgba(111, 66, 193, 0.2); /* Faint purple */
   margin-bottom: 1rem;
+}
+
+.testimonial-text {
   font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Pushes author info to bottom */
   font-style: italic;
-  color: var(--text-muted);
 }
 
-/* Client name */
-.author {
-  color: var(--text-dark);
+/* Author Section */
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1.5rem;
+}
+
+/* Avatar Circles (Initials) */
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 700;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .testimonial-card {
-    padding: 1.8rem;
-  }
-  .quote-mark {
-    font-size: 3rem;
-  }
+/* Random-looking colors for avatars */
+.purple-bg { background: linear-gradient(135deg, #6f42c1, #8e44ad); }
+.pink-bg { background: linear-gradient(135deg, #e91e63, #ff4081); }
+.blue-bg { background: linear-gradient(135deg, #2196f3, #4fc3f7); }
+.green-bg { background: linear-gradient(135deg, #009688, #4db6ac); }
+.orange-bg { background: linear-gradient(135deg, #ff9800, #ffb74d); }
+.teal-bg { background: linear-gradient(135deg, #00bcd4, #4dd0e1); }
+
+.author-details h6 {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.author-details small {
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }

@@ -1,38 +1,61 @@
-<div class="hero-section hero-white">
-  <div class="container py-5">
-    <div class="row align-items-center">
+<section>
+  <div class="hero-section hero-modern">
+    <!-- Animated background shapes (handled by CSS) -->
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
 
-      <!-- Column 1: Text -->
-      <div class="col-md-6" data-aos="fade-right">
-        <h1 class="display-4 fw-bold lh-1 mb-3 text-dark">
-          Precision in Process. Power in <span class="text-purple">Partnership.</span>
-        </h1>
+    <div class="container py-5 position-relative">
+      <div class="row align-items-center">
 
-        <p class="lead text-muted">
-          Medlysis delivers reliable, HIPAA-compliant medical record retrieval and healthcare staffing solutions,
-          empowering U.S. healthcare organizations with speed, security, and scale.
-        </p>
+        <!-- Column 1: Text -->
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+          
+          <!-- Trendy "Badge" style for the offer -->
+          <div class="badge-wrapper mb-4" routerLink="/contact">
+            <span class="badge-pill">Limited Offer</span>
+            <span class="badge-text">Pay <strong>$0</strong> for Medical Record Retrieval <i class="bi bi-arrow-right"></i></span>
+          </div>
 
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
-          <div class="zero-cost-banner" routerLink="/contact">
-        Pay <strong>$0</strong> for Medical Record Retrieval
-      </div> 
-          <!-- <button type="button" class="btn btn-purple btn-lg px-4 me-md-2">
-            Get a Free Consultation
-          </button> -->
+          <h1 class="display-3 fw-bold lh-sm mb-4 text-dark-heading">
+            Precision in Process.<br>
+            Power in <span class="text-purple-gradient">Partnership.</span>
+          </h1>
 
-          <!-- <button type="button" class="btn btn-outline-dark btn-lg px-4">
-            Learn More
-          </button> -->
+          <p class="lead text-muted mb-5">
+            Medlysis delivers reliable, HIPAA-compliant medical record retrieval and healthcare staffing solutions,
+            empowering U.S. healthcare organizations with speed, security, and scale.
+          </p>
+
+          <div class="d-flex gap-3 flex-wrap">
+            <!-- ROUTING ADDED HERE -->
+            <a routerLink="/contact" class="btn btn-primary btn-lg shadow-lg">
+              Get a Free Consultation
+            </a>
+            <a routerLink="/services" class="btn btn-outline-secondary btn-lg">
+              Explore Services
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- Column 2: Image -->
-      <div class="col-md-6 text-center" data-aos="fade-left" data-aos-delay="100">
-        <div class="hero-img-wrapper">
-          <img src="assets/hero.jpeg" class="img-fluid hero-img" alt="hero">
+        <!-- Column 2: Image -->
+        <div class="col-lg-6 text-center position-relative" data-aos="fade-left" data-aos-delay="200">
+          <!-- Glassmorphism Card for Image -->
+          <div class="hero-img-wrapper floating-anim">
+            <img src="assets/hero.jpeg" class="img-fluid hero-img" alt="Medlysis Dashboard">
+            
+            <!-- Floating "Success" Badge Decoration -->
+            <div class="floating-badge badge-bottom-left">
+              <i class="bi bi-check-circle-fill text-success fs-3"></i>
+              <div class="text-start">
+                <span class="d-block fw-bold text-dark">99.8%</span>
+                <small class="text-muted">Accuracy Rate</small>
+              </div>
+            </div>
+            
+          </div>
         </div>
+
       </div>
     </div>
   </div>
-</div>
+</section>

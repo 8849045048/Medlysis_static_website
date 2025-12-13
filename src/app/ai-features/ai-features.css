@@ -1,0 +1,75 @@
+:host {
+  --brand-purple: #6f42c1;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --bg-light: #f9fafb;
+}
+
+.ai-section {
+  padding: 6rem 0;
+  background-color: var(--bg-light); /* Light gray background to contrast with white cards */
+}
+
+.text-dark-heading {
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+.text-purple {
+  color: var(--brand-purple);
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* Card Styling - Matches 'Services' and 'Why Choose Us' */
+.ai-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb; /* Subtle border */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.ai-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(111, 66, 193, 0.15); /* Purple glow shadow */
+  border-color: var(--brand-purple);
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #f3f0ff; /* Light purple circle */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: var(--brand-purple);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.ai-card:hover .icon-box {
+  background-color: var(--brand-purple);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.ai-card h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.small-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

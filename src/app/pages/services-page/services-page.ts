@@ -1,23 +1,22 @@
-// src/app/pages/services-page/services-page.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { CtaSection } from '../../cta-section/cta-section'; // <-- 1. Import CTA
+import { CtaSection } from '../../cta-section/cta-section';
 
 @Component({
   selector: 'app-services-page',
   standalone: true,
   imports: [
-    CommonModule, // For *ngFor
+    CommonModule,
     RouterLink,
-    CtaSection  // <-- 2. Add CTA to imports
+    CtaSection
   ],
   templateUrl: './services-page.html',
   styleUrl: './services-page.css'
 })
 export class ServicesPage {
 
-  // --- Data for Section 1: Medical Record Retrieval ---
+  // MRR Data
   mrrIncludes = [
     'Dedicated liaison agents trained in HIPAA',
     'Multi-level validation handling',
@@ -31,7 +30,7 @@ export class ServicesPage {
     'Tailored service levels for bulk requests'
   ];
 
-  // --- Data for Section 2: Release of Information ---
+  // ROI Data
   roiIncludes = [
     'Verification of all incoming authorizations',
     'Handling of all subpoenas and legal documents',
@@ -44,7 +43,7 @@ export class ServicesPage {
     'Fully documented audit logs and support'
   ];
 
-  // --- Data for Section 3: Healthcare Staffing ---
+  // Staffing Data
   staffingIncludes = [
     'Medical coders (CCS-P, CPC, HCC, etc.)',
     'Virtual medical scribes',
@@ -58,5 +57,4 @@ export class ServicesPage {
     'Flexible contracts - hourly, monthly, or project-based',
     'Affordable, scalable, and highly reliable secure pool'
   ];
-
 }

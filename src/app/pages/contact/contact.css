@@ -5,139 +5,96 @@
   --bg-light: #f9fafb;
 }
 
-/* Section 1: Hero Styles */
+/* Page Hero (Consistent with other pages) */
 .page-hero {
-  /* Light gradient background */
   background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%);
   padding: 5rem 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.text-dark-heading {
-  color: var(--dark-heading);
-}
+.text-dark-heading { color: var(--dark-heading); }
+.text-purple { color: var(--brand-purple); }
+.text-muted { color: var(--text-muted) !important; line-height: 1.6; }
 
-.text-purple {
-  color: var(--brand-purple);
-}
-
-.text-muted {
-  color: var(--text-muted) !important;
-  line-height: 1.6;
-}
-
-/* Contact Info Styles */
-.contact-info {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-info li {
+/* --- NEW: Interactive Contact Cards --- */
+.contact-card {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  color: #4b5563; /* Dark Gray */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  cursor: default; /* Or pointer if you want whole card clickable */
 }
 
-.contact-info i {
+/* Uses the global .card-hover-3d class logic (tilt) but we refine hover state here */
+.contact-card:hover {
+  border-color: var(--brand-purple);
+  /* The 3D tilt is handled by the global class, this adds color */
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f3f0ff; /* Light purple circle */
   color: var(--brand-purple);
-  font-size: 1.4rem;
-  margin-right: 1rem;
-  width: 24px;
-  text-align: center;
-  background-color: #f3f0ff; /* Light purple circle bg for icon */
   border-radius: 50%;
-  padding: 10px;
-  width: 45px;
-  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Form Styles */
-.form-wrapper {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Subtle shadow */
-}
-
-.contact-form .form-label {
-  color: var(--dark-heading);
-  font-weight: 600;
-}
-
-.contact-form .form-control {
-  background-color: #f9fafb; /* Very light gray input bg */
-  border: 1px solid #d1d5db;
-  color: #1f2937;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
+  font-size: 1.5rem;
+  margin-right: 1rem;
   transition: all 0.3s ease;
 }
 
-.contact-form .form-control:focus {
+.contact-card:hover .icon-box {
+  background-color: var(--brand-purple);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* --- Enhanced Form Styling --- */
+.form-wrapper {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 20px; /* Softer corners */
+  border: 1px solid #f3f4f6;
+  /* Shadow is handled by bootstrap class .shadow-lg but refined here */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05) !important; 
+}
+
+/* Floating Labels (Bootstrap override) */
+.form-floating > .form-control {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.form-floating > .form-control:focus {
   background-color: #ffffff;
   border-color: var(--brand-purple);
   box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.1);
-  outline: none;
 }
 
-/* --- THE GLOWING BUTTON --- */
-.btn-primary {
-  background-color: var(--brand-purple);
-  border-color: var(--brand-purple);
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 12px 28px;
-  transition: all 0.3s ease;
-  
-  /* Initial Glow */
-  box-shadow: 0 4px 15px rgba(111, 66, 193, 0.4); 
+.form-floating > label {
+  color: #9ca3af;
 }
 
-.btn-primary:hover {
-  background-color: #5a34a3;
-  border-color: #5a34a3;
-  transform: translateY(-2px);
-  
-  /* Stronger Glow on Hover */
-  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.6); 
-}
-
-.btn-primary:disabled {
-  background-color: #a5a5a5;
-  border-color: #a5a5a5;
-  box-shadow: none;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Location Map Styles */
+/* --- Map Enhancement --- */
 .location-section {
-  padding: 5rem 0;
-  background-color: var(--bg-light); /* Light Gray */
+  padding: 6rem 0;
+  background-color: var(--bg-light);
   border-top: 1px solid #e5e7eb;
 }
 
-.map-responsive {
+.map-wrapper {
+  border-radius: 20px;
   overflow: hidden;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  position: relative;
-  height: 0;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow */
+  border: 4px solid #ffffff; /* White border frame */
+  /* Global .card-hover-3d handles the tilt */
 }
 
-.map-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
+.map-wrapper iframe {
+  display: block; /* Removes bottom whitespace */
 }

@@ -10,7 +10,7 @@
   background-color: #ffffff;
 }
 
-/* Alternating background color for sections */
+/* Alternating background color */
 .bg-light-section {
   background-color: var(--bg-light);
   border-top: 1px solid #e5e7eb;
@@ -30,6 +30,36 @@
   line-height: 1.7;
 }
 
+/* Icon Header for Cards */
+.icon-header {
+  width: 60px;
+  height: 60px;
+  background-color: #f3f0ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-box .icon-header {
+  background-color: #fffbeb; /* Light yellow background for 'Why Choose' icon */
+}
+
+/* Feature Box (Glassmorphism-lite) */
+.feature-box {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  border-color: var(--brand-purple);
+  /* The 3D tilt is handled by global .card-hover-3d, this adds border color */
+}
+
 /* Feature List Styling */
 .feature-list {
   padding-left: 0;
@@ -45,27 +75,30 @@
   font-size: 1.05rem;
 }
 
-.feature-list i {
+/* Checkmark Icon */
+.feature-list i.bi-check-circle-fill {
   color: var(--brand-purple);
   font-size: 1.3rem;
   margin-right: 1rem;
   margin-top: 2px;
-  background-color: #f3f0ff; /* Light purple circle */
-  border-radius: 50%;
-  min-width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: 24px;
+}
+
+/* Star Icon (For "Why Choose") */
+.feature-list i.bi-star-fill {
+  color: #fbbf24; /* Golden Yellow */
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 3px;
+  min-width: 24px;
 }
 
 /* The 'Why Choose' box styling */
 .why-box {
   background-color: #f8fafc; /* Light Gray Box */
   border: 1px solid #e5e7eb;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 2.5rem;
-  height: 100%;
   box-shadow: 0 4px 6px rgba(0,0,0,0.02);
   transition: transform 0.3s ease;
 }
@@ -76,24 +109,20 @@
 }
 
 .why-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
   border-color: var(--brand-purple);
 }
 
-/* Button Styling (Outline Primary) */
-.btn-outline-primary {
-  color: var(--brand-purple);
-  border: 2px solid var(--brand-purple);
+/* Pill Button Override */
+.pill-btn {
+  border-radius: 50px;
+  padding: 12px 32px;
   font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-width: 2px;
 }
 
-.btn-outline-primary:hover {
-  background-color: var(--brand-purple);
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(111, 66, 193, 0.3);
-  transform: translateY(-2px);
+.section-divider {
+  border-top: 1px solid #e5e7eb;
+  width: 80%;
+  margin: 0 auto;
+  opacity: 1;
 }

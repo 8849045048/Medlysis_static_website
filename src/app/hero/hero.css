@@ -1,142 +1,190 @@
-/* ================================
-   HERO SECTION (WHITE THEME)
-================================ */
-
-.hero-white {
-  background: #f8fafc; /* subtle contrast */
-  padding-top: 80px;
-  padding-bottom: 80px;
+:host {
+  --brand-purple: #6f42c1;
+  --brand-pink: #ff4fa3;
+  --bg-gradient-start: #ffffff;
+  --bg-gradient-end: #f3f4f6;
 }
 
-/* Purple branding */
-.text-purple {
-  color: #6f42c1;
+/* 1. HERO CONTAINER */
+.hero-modern {
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden; /* Clips the blurred shapes */
+  padding: 8rem 0 6rem; /* Extra space for header */
 }
 
-/* Heading */
-.hero-white h1 {
-  color: #121212;
+/* 2. ANIMATED BACKGROUND SHAPES (The subtle glow) */
+.hero-bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: 0;
+  animation: floatShape 10s infinite alternate;
+}
+
+.shape-1 {
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.shape-2 {
+  bottom: -10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  animation-delay: -5s;
+}
+
+@keyframes floatShape {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 50px); }
+}
+
+/* 3. TYPOGRAPHY */
+.text-dark-heading {
+  color: #111827;
   font-weight: 800;
+  letter-spacing: -1.5px; /* Tight modern tracking */
+  position: relative;
+  z-index: 1;
 }
 
-/* Body text */
-.hero-white p {
-  color: #475467 !important;
-  font-size: 1.1rem;
+.text-purple-gradient {
+  background: linear-gradient(to right, #6f42c1, #a052e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Primary purple CTA */
-.btn-purple {
-  background: #6f42c1;
+.lead {
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. THE "PAY $0" BADGE */
+.badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(111, 66, 193, 0.2);
+  border-radius: 50px;
+  padding: 6px 6px 6px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.badge-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.15);
+  border-color: var(--brand-purple);
+}
+
+.badge-pill {
+  background: var(--brand-purple);
   color: white;
-  border-radius: 10px;
-  padding: 12px 24px;
-  border: none;
-  transition: background .2s ease;
-}
-.btn-purple:hover {
-  background: #5933a8;
-}
-
-/* Outline CTA */
-.btn-outline-dark {
-  border-radius: 10px;
-  padding: 12px 24px;
-  border: 2px solid #d0d5dd;
-  color: #121212;
-  font-weight: 600;
-}
-.btn-outline-dark:hover {
-  background: #f1f3f7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 12px;
 }
 
-/* Hero image wrap card */
+.badge-text {
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-right: 12px;
+}
+
+.badge-text i {
+  color: var(--brand-purple);
+  margin-left: 5px;
+}
+
+/* 5. IMAGE & GLASSMORPHISM */
 .hero-img-wrapper {
-  background: #ffffff;
-  padding: 16px;
-  border-radius: 14px;
-  box-shadow: 0 14px 38px rgba(0,0,0,0.06);
-  display: inline-block;
+  position: relative;
+  border-radius: 24px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  z-index: 1;
 }
 
 .hero-img {
-  border-radius: 10px;
-  object-fit: contain;
-  max-height: 450px;
-  width: auto;
+  border-radius: 20px;
+  width: 100%;
+  display: block;
 }
 
-
-
-/* ==========================================
-   FINAL — 0$ OFFER NEON GLOW + ANIMATED BG
-========================================== */
-
-.zero-cost-banner {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-
-  /* Smooth animated gradient */
-  background: linear-gradient(120deg, #ff4fa3, #d24fd8, #6f42c1, #0b63ff);
-  background-size: 350% 350%;
-  animation: smoothBG 10s ease infinite;
-
-  padding: 16px 40px;
-  border-radius: 14px;
-  width: fit-content;
-  margin: 20px auto 40px;
-
-  /* Strong neon glow */
-  box-shadow:
-    0 0 12px rgba(255, 79, 163, 0.65),
-    0 0 28px rgba(210, 79, 216, 0.55),
-    0 0 45px rgba(111, 66, 193, 0.55),
-    0 0 70px rgba(11, 99, 255, 0.45);
-
-  transition: transform .25s ease, box-shadow .25s ease;
-  cursor: pointer;
+/* 6. FLOATING ANIMATION */
+.floating-anim {
+  animation: floatImg 6s ease-in-out infinite;
 }
 
-/* Hover: brighter neon + lift */
-.zero-cost-banner:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow:
-    0 0 18px rgba(255, 79, 163, 0.85),
-    0 0 45px rgba(210, 79, 216, 0.75),
-    0 0 70px rgba(111, 66, 193, 0.65),
-    0 0 110px rgba(11, 99, 255, 0.55);
+@keyframes floatImg {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Text glow */
-.zero-cost-banner strong {
-  text-shadow:
-    0 0 6px rgba(255, 255, 255, 0.75),
-    0 0 12px rgba(255, 255, 255, 0.55);
+/* 7. FLOATING BADGE DECORATION */
+.floating-badge {
+  position: absolute;
+  background: #ffffff;
+  padding: 12px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  bottom: 40px;
+  left: -30px;
+  animation: floatBadge 5s ease-in-out infinite alternate;
 }
 
-/* Smooth background movement */
-@keyframes smoothBG {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes floatBadge {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
 }
 
-@media (max-width: 768px) {
-  .zero-cost-banner {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 18px 20px;
-    font-size: 1.05rem;
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-modern {
+    padding: 6rem 0 4rem;
     text-align: center;
-
-    margin: 24px auto 32px;
-    border-radius: 14px;
   }
-
-  /* Mobile tap feedback */
-  .zero-cost-banner:active {
-    transform: scale(0.97);
+  
+  .lead {
+    margin: 0 auto;
+  }
+  
+  .d-flex {
+    justify-content: center;
+  }
+  
+  .floating-badge {
+    display: none; /* Hide on mobile to save space */
+  }
+  
+  .hero-img-wrapper {
+    margin-top: 3rem;
   }
 }

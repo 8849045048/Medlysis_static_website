@@ -7,7 +7,8 @@
 
 /* Section 1: Hero Styles */
 .page-hero {
-  background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%); /* Subtle purple tint */
+  /* Light gradient background */
+  background: linear-gradient(135deg, #ffffff 0%, #f3f0ff 100%);
   padding: 5rem 0;
   border-bottom: 1px solid #e5e7eb;
 }

@@ -1,40 +1,60 @@
-import { Component, signal, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// src/app/app.ts (Corrected)
 
-// 1. Import Header
-// Make sure the class name in header.ts is 'HeaderComponent'
-import { HeaderComponent } from './header/header';
+import { Component, signal, OnInit } from '@angular/core'; 
+import { RouterOutlet } from '@angular/router'; 
 
-// 2. Import Footer
-// Make sure the class name in footer.ts is 'Footer' (based on your previous code)
+// Import Header
+import { HeaderComponent } from './header/header'; 
+
+// Import Footer
 import { Footer } from './footer/footer';
 
-// 3. Import Preloader
-// Make sure the class name in preloader.ts is 'PreloaderComponent'
-import { PreloaderComponent } from './preloader/preloader';
+// Import Preloader
+import { PreloaderComponent } from './preloader/preloader'; 
 
-import AOS from 'aos';
+import AOS from 'aos'; 
+import Lenis from 'lenis'; 
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: true, 
   imports: [
-    RouterOutlet,
-    HeaderComponent,
+    RouterOutlet, 
+    HeaderComponent, 
     Footer,
-    PreloaderComponent // Add Preloader here
+    PreloaderComponent 
   ],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './app.html', 
+  styleUrl: './app.css'     
 })
-export class App implements OnInit {
+export class App implements OnInit { 
   protected readonly title = signal('my-medlysis-app');
 
   ngOnInit(): void {
+    // 1. Initialize Animations
     AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100,
+      duration: 800, 
+      once: true,    
+      offset: 100,   
+    }); 
+
+    // 2. Initialize Smooth Scroll (Fixed property name)
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical', // <--- CHANGED FROM 'direction' TO 'orientation'
+      gestureOrientation: 'vertical', // <--- CHANGED FROM 'gestureDirection' TO 'gestureOrientation'
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
     });
+
+    // 3. Connect Lenis loop
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   }
 }

@@ -1,60 +1,63 @@
-// src/app/app.ts (Corrected)
+import { Component, signal, OnInit } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
-import { Component, signal, OnInit } from '@angular/core'; 
-import { RouterOutlet } from '@angular/router'; 
-
-// Import Header
-import { HeaderComponent } from './header/header'; 
-
-// Import Footer
+import { HeaderComponent } from './header/header';
 import { Footer } from './footer/footer';
+import { PreloaderComponent } from './preloader/preloader';
 
-// Import Preloader
-import { PreloaderComponent } from './preloader/preloader'; 
-
-import AOS from 'aos'; 
-import Lenis from 'lenis'; 
+import AOS from 'aos';
+import Lenis from 'lenis';
 
 @Component({
   selector: 'app-root',
-  standalone: true, 
+  standalone: true,
   imports: [
-    RouterOutlet, 
-    HeaderComponent, 
+    RouterOutlet,
+    HeaderComponent,
     Footer,
-    PreloaderComponent 
+    PreloaderComponent
   ],
-  templateUrl: './app.html', 
-  styleUrl: './app.css'     
+  templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class App implements OnInit { 
+export class App implements OnInit {
+
   protected readonly title = signal('my-medlysis-app');
 
-  ngOnInit(): void {
-    // 1. Initialize Animations
-    AOS.init({
-      duration: 800, 
-      once: true,    
-      offset: 100,   
-    }); 
+  constructor(private router: Router) {}
 
-    // 2. Initialize Smooth Scroll (Fixed property name)
+  ngOnInit(): void {
+
+    // AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+    });
+
+    // Lenis Smooth Scroll
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical', // <--- CHANGED FROM 'direction' TO 'orientation'
-      gestureOrientation: 'vertical', // <--- CHANGED FROM 'gestureDirection' TO 'gestureOrientation'
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
 
-    // 3. Connect Lenis loop
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
+
+    // ✅ Scroll to top on route change
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        lenis.scrollTo(0, { immediate: true });
+      });
   }
 }

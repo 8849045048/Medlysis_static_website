@@ -118,22 +118,85 @@
 }
 
 /* Text shimmer */
-.neon-text {
+.neon-offer {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 18px 36px;
+  border-radius: 999px; /* Perfect pill */
+
   background: linear-gradient(
-    90deg,
-    #ffffff,
-    #e9d5ff,
-    #fbcfe8,
-    #ffffff
+    135deg,
+    #b15adf 0%,
+    #8b5cf6 50%,
+    #6f42c1 100%
   );
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textShine 3s linear infinite;
+
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(111, 66, 193, 0.45),
+    0 0 40px rgba(177, 90, 223, 0.35);
+
+  transition: all 0.35s ease;
 }
 
-@keyframes textShine {
-  to { background-position: 300% center; }
+/* Text */
+.neon-text {
+  white-space: nowrap;
+}
+
+.neon-text strong {
+  font-weight: 900;
+}
+
+/* Arrow */
+.cta-arrow {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.neon-offer:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 45px rgba(111, 66, 193, 0.55),
+    0 0 60px rgba(177, 90, 223, 0.45);
+}
+
+.neon-offer:hover .cta-arrow {
+  transform: translateX(6px);
+}
+
+/* Soft Glow Aura */
+.neon-offer::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(177, 90, 223, 0.6),
+    rgba(139, 92, 246, 0.6),
+    rgba(111, 66, 193, 0.6)
+  );
+  filter: blur(18px);
+  z-index: -1;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .neon-offer {
+    font-size: 1.05rem;
+    padding: 14px 24px;
+  }
 }
 
 /* $0 pop */
@@ -223,5 +286,125 @@
 
   .hero-cta {
     animation: none;
+  }
+}
+
+/* =====================
+   MOBILE OPTIMIZATION
+===================== */
+
+@media (max-width: 768px) {
+
+  /* HERO SECTION */
+  .hero-modern {
+    padding: 5rem 0 4rem;
+  }
+
+  /* GRID */
+  .hero-grid {
+    gap: 2.5rem;
+  }
+
+  /* HEADING */
+  .hero-heading {
+    font-size: 2.2rem;
+    line-height: 1.25;
+    max-width: 100%;
+  }
+
+  /* SUBTEXT */
+  .hero-subtext {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /* CTA BUTTON */
+  .hero-cta,
+  .neon-offer {
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  /* Reduce pulse for performance */
+  .hero-cta {
+    animation: none;
+  }
+
+  /* Reduce glow intensity */
+  .hero-cta::before,
+  .neon-offer::before {
+    inset: -4px;
+    filter: blur(14px);
+    opacity: 0.7;
+  }
+
+  /* $0 price pop */
+  .price-pop {
+    font-size: 1.15em;
+    animation: none;
+  }
+
+  /* Arrow */
+  .cta-arrow {
+    font-size: 1.2rem;
+  }
+
+  /* IMAGE */
+  .hero-img-wrapper {
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .hero-img-wrapper img {
+    border-radius: 16px;
+  }
+
+  /* BACKGROUND SHAPES — prevent overflow */
+  .hero-bg-shape {
+    filter: blur(70px);
+    opacity: 0.35;
+  }
+
+  .shape-1 {
+    width: 280px;
+    height: 280px;
+    top: -15%;
+    right: -20%;
+  }
+
+  .shape-2 {
+    width: 260px;
+    height: 260px;
+    bottom: -20%;
+    left: -25%;
+  }
+}
+
+/* =====================
+   SMALL PHONES
+===================== */
+@media (max-width: 480px) {
+
+  .hero-heading {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+
+  .hero-cta,
+  .neon-offer {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  .cta-arrow {
+    display: none; /* cleaner on very small screens */
   }
 }

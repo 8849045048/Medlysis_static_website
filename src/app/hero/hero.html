@@ -1,61 +1,38 @@
-<section>
-  <div class="hero-section hero-modern">
-    <!-- Animated background shapes (handled by CSS) -->
-    <div class="hero-bg-shape shape-1"></div>
-    <div class="hero-bg-shape shape-2"></div>
+<section class="hero-modern">
+  <!-- Background glow shapes -->
+  <div class="hero-bg-shape shape-1"></div>
+  <div class="hero-bg-shape shape-2"></div>
 
-    <div class="container py-5 position-relative">
-      <div class="row align-items-center">
+  <div class="container">
+    <div class="hero-grid">
 
-        <!-- Column 1: Text -->
-        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-          
-          <!-- Trendy "Badge" style for the offer -->
-          <div class="badge-wrapper mb-4" routerLink="/contact">
-            <span class="badge-pill">Limited Offer</span>
-            <span class="badge-text">Pay <strong>$0</strong> for Medical Record Retrieval <i class="bi bi-arrow-right"></i></span>
-          </div>
+      <!-- LEFT CONTENT -->
+      <div class="hero-content">
+        <h1 class="hero-heading">
+          Precision in Process.
+          Power in <span class="text-purple-gradient">Partnership.</span>
+        </h1>
 
-          <h1 class="display-3 fw-bold lh-sm mb-4 text-dark-heading">
-            Precision in Process.<br>
-            Power in <span class="text-purple-gradient">Partnership.</span>
-          </h1>
+        <p class="hero-subtext">
+          Medlysis delivers reliable, HIPAA-compliant medical record retrieval and healthcare staffing solutions,
+          empowering U.S. healthcare organizations with speed, security, and scale.
+        </p>
 
-          <p class="lead text-muted mb-5">
-            Medlysis delivers reliable, HIPAA-compliant medical record retrieval and healthcare staffing solutions,
-            empowering U.S. healthcare organizations with speed, security, and scale.
-          </p>
-
-          <div class="d-flex gap-3 flex-wrap">
-            <!-- ROUTING ADDED HERE -->
-            <a routerLink="/contact" class="btn btn-primary btn-lg shadow-lg">
-              Get a Free Consultation
-            </a>
-            <a routerLink="/services" class="btn btn-outline-secondary btn-lg">
-              Explore Services
-            </a>
-          </div>
-        </div>
-
-        <!-- Column 2: Image -->
-        <div class="col-lg-6 text-center position-relative" data-aos="fade-left" data-aos-delay="200">
-          <!-- Glassmorphism Card for Image -->
-          <div class="hero-img-wrapper floating-anim">
-            <img src="assets/hero.jpeg" class="img-fluid hero-img" alt="Medlysis Dashboard">
-            
-            <!-- Floating "Success" Badge Decoration -->
-            <div class="floating-badge badge-bottom-left">
-              <i class="bi bi-check-circle-fill text-success fs-3"></i>
-              <div class="text-start">
-                <span class="d-block fw-bold text-dark">99.8%</span>
-                <small class="text-muted">Accuracy Rate</small>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-
+        <a routerLink="/contact" class="hero-cta neon-offer">
+          <span class="neon-text">
+            Pay <strong class="price-pop">$0</strong> for Medical Record Retrieval
+          </span>
+          <span class="cta-arrow">→</span>
+        </a>
       </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="hero-image">
+        <div class="hero-img-wrapper">
+          <img src="assets/hero.jpeg" alt="Medlysis" />
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

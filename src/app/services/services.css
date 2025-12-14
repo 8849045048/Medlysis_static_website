@@ -1,70 +1,171 @@
 :host {
   --brand-purple: #6f42c1;
-  --card-border: #e5e7eb;  /* light grey */
+  --card-border: #e5e7eb;
   --text-dark: #0b1724;
 }
 
-/* Card container */
-.service-card {
-  background-color: #ffffff;          /* White card */
-  padding: 2rem;
+/* ======================================================
+   COMPLIANCE SECTION
+====================================================== */
+
+.compliance-section {
+  background-color: #ffffff;
+}
+
+.compliance-card {
+  background-color: #ffffff;
+  padding: 2.25rem 2rem;
   border-radius: 12px;
   border: 1px solid var(--card-border);
   height: 100%;
+  text-align: center;
   transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04); /* Soft shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
-.service-card:hover {
-  border-color: var(--brand-purple);      /* Purple border on hover */
-  transform: translateY(-6px);            /* Slight lift effect */
+.compliance-card:hover {
+  border-color: var(--brand-purple);
+  transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Icon */
-.service-icon {
-  font-size: 2.5rem;
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(111, 66, 193, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.icon-circle i {
+  font-size: 1.8rem;
   color: var(--brand-purple);
 }
 
-/* Heading */
-.service-card h5 {
+.compliance-card h5 {
   color: var(--text-dark);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
-/* Description */
-.service-card p {
-  color: #6b7280;       /* muted gray text */
-  flex-grow: 1;         /* push link to bottom */
+.compliance-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-/* Learn more link as button-like */
-.service-link {
+/* ======================================================
+   SERVICES SECTION
+====================================================== */
+
+.service-section {
+  padding: 6rem 0;
+}
+
+.bg-light-section {
+  /* background-color: #fdf6ec; */
+}
+
+.text-dark-heading {
+  color: var(--text-dark);
+}
+
+.text-purple {
   color: var(--brand-purple);
-  font-weight: 600;
-  text-decoration: none;
-  border: 2px solid var(--brand-purple);
-  padding: 0.6rem 1.1rem;
-  border-radius: 6px;
-  text-align: center;
+}
+
+.text-muted {
+  color: #6b7280 !important;
+  line-height: 1.7;
+}
+
+/* ======================================================
+   FEATURE BOX (SERVICE DETAIL CARDS)
+====================================================== */
+
+.feature-box {
+  background-color: #ffffff;
+  padding: 2.75rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
   transition: all 0.25s ease;
 }
 
-.service-link:hover {
-  background-color: var(--brand-purple);
-  color: #fff;
+.feature-box:hover {
+  border-color: var(--brand-purple);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Mobile tweaks */
-@media (max-width: 576px) {
-  .service-card {
-    text-align: center;
+/* Icon header inside feature box */
+.icon-header {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(111, 66, 193, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-header i {
+  font-size: 1.5rem;
+  color: var(--brand-purple);
+}
+
+/* Feature box text */
+.feature-box h5 {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.feature-box p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* ======================================================
+   FEATURE LIST (ONE-LINE POINTS)
+====================================================== */
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #4b5563;
+}
+
+.feature-list li i {
+  color: var(--brand-purple);
+  font-size: 1.25rem;
+  margin-top: 3px;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 768px) {
+  .service-section {
+    padding: 4rem 1rem;
   }
-  .service-icon {
-    margin: 0 auto;
+
+  .feature-box,
+  .compliance-card {
+    padding: 2rem 1.5rem;
   }
 }

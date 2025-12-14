@@ -1,5 +1,7 @@
+// src/app/app.ts
+
 import { Component, signal, OnInit } from '@angular/core';
-import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 import { HeaderComponent } from './header/header';
@@ -25,21 +27,23 @@ export class App implements OnInit {
 
   protected readonly title = signal('my-medlysis-app');
 
+  private lenis!: Lenis; // ✅ store lenis as class property
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
 
-    // AOS
+    /* 1️⃣ Initialize AOS */
     AOS.init({
       duration: 800,
       once: true,
       offset: 100,
     });
 
-    // Lenis Smooth Scroll
-    const lenis = new Lenis({
+    /* 2️⃣ Initialize Lenis */
+    this.lenis = new Lenis({
       duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
@@ -47,17 +51,18 @@ export class App implements OnInit {
       touchMultiplier: 2,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
+    /* 3️⃣ Lenis RAF loop */
+    const raf = (time: number) => {
+      this.lenis.raf(time);
       requestAnimationFrame(raf);
-    }
+    };
     requestAnimationFrame(raf);
 
-    // ✅ Scroll to top on route change
+    /* 4️⃣ Scroll to top on route change */
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        lenis.scrollTo(0, { immediate: true });
+        this.lenis.scrollTo(0, { immediate: true });
       });
   }
 }
